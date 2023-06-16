@@ -1,3 +1,10 @@
+---
+date: '2023-06-16T21:31:49.170Z'
+tags: 
+  - 'promise'
+  - 'clean code'
+---
+
 # Cleaning Up Promise Chains
 
 MDN says:
@@ -6,11 +13,11 @@ MDN says:
 
 ## Promises in the Wild
 
-Promises were added to Javascript in 2012 and since then, and even before with [Bluebird](http://bluebirdjs.com/docs/getting-started.html) et al., I've seen them used in quite a few different ways. In my experience as a techinal lead I've had the pleasure to learn what, in my opion, is the best way to use them so that they are scalable, testable and _readable_.
+Promises were added to Javascript in 2012 and since then, and even before with [Bluebird](http://bluebirdjs.com/docs/getting-started.html) et al., I've seen them used in quite a few different ways. In my experience as a techinal lead I've had the pleasure to learn, in my opion, the best way to create them so that they are scalable, testable and _readable_.
 
 ## Humans Read This Stuff
 
-I often see Promise chains used with lambdas and some times this is totally ok. After all, lambdas forgoe the extra mental energy of thinking of a name, which is one of my favorite things. I prefer to expend my creative energy on the real task at hand, but this comes at a cost of readability, and even testability (or easier).
+I often see Promise chains used with lambdas and some times this is totally ok. After all, lambdas forgoe the extra mental energy of thinking of a name, which is one of my favorite things. I prefer to expend my creative energy on the real task at hand, but this comes at a cost of readability, and even testability.
 
 An example. Say we're getting data from an API and we want to do a small transform on that data. In the example below we'll average 3 data points:
 
@@ -46,7 +53,7 @@ funcion getData() {
 }
 ```
 
-So far not _*so*_ bad, but you can see that this anonymous function is starting to grow and it's wrapped in all the Promise noise. Plus it's got some error handling and, oh yeah, it's kicked off by a request.
+So far not _*so*_ bad, but you can see that this anonymous function is starting to grow and it's wrapped in all the Promise noise. Plus it's got some error handling and, oh yeah, it's kicked off by a request too.
 
 Let's go one step further and make this [columnar data](https://github.com/leeoniya/uPlot/tree/master/docs#data-format) so we can put it on a graph. Just one point for `sum` and one point for `average`. To do this we'll add another function to the chain.
 
@@ -75,7 +82,7 @@ This is really starting to get noisy and more transforms will just add to that. 
 
 ## There's a Better Way
 
-Let's clean this mess up so that there's less noise and we can scale it out and maintain readability.
+Let's clean this mess up so that there's less noise, we can test it (more easily) and we can scale it out and maintain readability.
 
 First let's give each anonymous function a name and pull it out of the chain.
 
@@ -118,4 +125,8 @@ function getData() {
     .catch(console.error);
 }
 ```
-We've made this much more declarative and scalable. The next dev who comes along is much less likely to jam more logic into an already complex, long 
+We've made this much more declarative and scalable. I know it's subjective, but I think it reads much nicer too.
+
+I realize that this solution may cause some indrection, but the readability is worth it especially since most code editors allow you to jump to functions anyway.
+
+In summary, where possible move your logic out of lambdas and into named functions so that you can test your assumptions outside of the Promise. You may find that you have variable scope issues with this approach. I'll cover that in another post.
