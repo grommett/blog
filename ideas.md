@@ -1,0 +1,17 @@
+- Lifting conditonals
+  - Move conditionals to the top
+  - Use a strategy/decideer pattern
+  - Think outside of if/else/else if
+  - Gaurd pattern
+- Repo bit rot
+  - Like memory bit rot
+  - Append only
+  - Small pieces
+  - You must own and bird dog that thing
+- Team leadership 
+  - what's worked, what hasnt
+  - don't answer everything
+  - resist the urge to enforce your favorite way
+  - let devs explore thier own solutions
+- Keeping projects on the rails
+- The importance of daily PR reviews
