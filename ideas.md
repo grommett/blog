@@ -1,6 +1,6 @@
 - Lifting conditonals
   - Move conditionals to the top
-  - Use a strategy/decideer pattern
+  - Use a strategy/decider pattern
   - Think outside of if/else/else if
   - Gaurd pattern
 - Repo bit rot
@@ -15,3 +15,5 @@
   - let devs explore thier own solutions
 - Keeping projects on the rails
 - The importance of daily PR reviews
+- You may not need Express for that
+  - The art of a simple node server
