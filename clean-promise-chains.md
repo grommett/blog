@@ -1,5 +1,5 @@
 ---
-date: '2023-06-16T21:31:49.170Z'
+date: '2023-06-16'
 tags: 
   - 'promise'
   - 'clean code'
