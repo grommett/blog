@@ -16,7 +16,8 @@ In our application we allow users to create an architectural diagram of how an a
 1. After all of the results have arrived we build up an object that creates relationships among the resources
 1. Send the result of step two to another server that parses the object and builds a nice architecture diagram in Draw.io format (xml)
 1. Send the diagram back to the user
-1. Steps one and three may take some time and during those processes we can give our users feedback. We do that with an "onStatus" event. This event simply reports `Downloading resources` and `Creating diagram` to the UI. Naturally, there is also error handling and a few others, but we'll focus on the `onStatus` event for simplicity.
+
+Steps one and three may take some time and during those processes we can give our users feedback. We do that with an "onStatus" event. This event simply reports `Downloading resources` and `Creating diagram` to the UI. Naturally, there is also error handling and a few others, but we'll focus on the `onStatus` event for simplicity.
 
 ## Overview
 As you'd imagine you need two pieces to put this puzzle together:
@@ -60,7 +61,7 @@ function sseRouteHandler(_req, res) {
 Above we're doing what we did before, but now we're also sending one event. As you can see we're specifying:
 
 - **Name** of the event: `event: onStatus`
-- **Value**: `data: Downloading Resource`
+- **Value**: `data: Downloading resources`
 
 This is really easy! Nothing too crazy or esoteric about it. Just a block of text that almost looks like yaml, but it's not.
 
