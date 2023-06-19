@@ -11,7 +11,7 @@ MDN says:
 
 > A Promise is a proxy for a value not necessarily known when the promise is created.
 
-I know that now nowadays `await` is used more frequently, but remember behind every `await` is a Promise. `await` is just nice abstraction over a Promise that fits our mental model better. There is still a really strong case for Promises, especially if you need multiple asyncronous operations executing in parallel.
+I know that now nowadays `await` is used more frequently, but remember behind every `await` is a Promise. `await` is just nice abstraction over a Promise that fits our mental model better. There is still a really strong case for Promises, especially if you need multiple asynchronous operations executing in parallel.
 
 ## Promises in the Wild
 
@@ -19,14 +19,14 @@ Promises were added to Javascript in 2012 and since then, and even before with [
 
 ## Humans Read This Stuff
 
-I often see Promise chains used with lambdas and some times this is totally ok. After all, lambdas forgoe the extra mental energy of thinking of a name and I love that. I prefer to expend my creative energy on the real task at hand, but this can come at a cost of readability, and even testability.
+I often see Promise chains used with lambdas and some times this is totally ok. After all, lambdas forgo the extra mental energy of thinking of a name and I love that. I prefer to expend my creative energy on the real task at hand, but this can come at a cost of readability, and even testability.
 
 ## Some Examples
 
 Say we're getting data from an API and we want to do a small transform on that data. In the example below we'll average 3 data points:
 
 ```js
-funcion getData() {
+function getData() {
   return fetch('someurl')
     .then((response) => {
       return response.json();
@@ -42,7 +42,7 @@ funcion getData() {
 Now let's say, in addition to the average, our users want to see the sum.
 
 ```js
-funcion getData() {
+function getData() {
   return fetch('someurl')
     .then((response) => {
       return response.json();
@@ -82,7 +82,7 @@ function getData() {
 }
 ```
 
-This is really starting to get noisy and more transforms will just add to that. Believe me when I say the next developer **WILL** just add to this chain! Additonally, it's hard to break this out into smaller unit tests. You'll have to run `getData` and `await` + `try/catch` before you even know if each anonymous function does what it claims. Additonally, before we can even test we'll need to mock `fetch`. 🤕
+This is really starting to get noisy and more transforms will just add to that. Believe me when I say the next developer **WILL** just add to this chain! Additionally, it's hard to break this out into smaller unit tests. You'll have to run `getData` and `await` + `try/catch` before you even know if each anonymous function does what it claims. Additionally, before we can even test we'll need to mock `fetch`. 🤕
 
 ## There's a Better Way
 
@@ -132,10 +132,11 @@ function getData() {
 }
 ```
 
-> Using functions in this way is called [tacit programming](https://en.wikipedia.org/wiki/Tacit_programming). If you like functional programming, or even intersted in the idea, have a look at the link.
+## Side Note
 
-In the code above we've made this much more declarative and scalable. I know it's subjective, but I think it reads much nicer too.
+> Using functions in this way is called [tacit programming](https://en.wikipedia.org/wiki/Tacit_programming). If you like functional programming, or even interested in the idea, have a look at the link.
+> In the code above we've made this much more declarative and scalable. I know it's subjective, but I think it reads much nicer too.
 
-I realize that this solution may cause some indrection, but the readability is worth it, especially since most code editors allow you to jump to functions anyway.
+I realize that this solution may cause some indirection, but the readability is worth it, especially since most code editors allow you to jump to functions anyway.
 
 In summary, where possible move your logic out of lambdas and into named functions so that you can test your assumptions outside of the Promise. You may find that you have variable scope issues with this approach. I'll cover that in another post.
