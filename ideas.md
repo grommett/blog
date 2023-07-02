@@ -1,19 +1,21 @@
-- Lifting conditonals
+- Lifting conditionals
   - Move conditionals to the top
   - Use a strategy/decider pattern
   - Think outside of if/else/else if
-  - Gaurd pattern
+  - Guard pattern
 - Repo bit rot
   - Like memory bit rot
   - Append only
   - Small pieces
   - You must own and bird dog that thing
 - Team leadership 
-  - what's worked, what hasnt
+  - what's worked, what hasn't
   - don't answer everything
   - resist the urge to enforce your favorite way
-  - let devs explore thier own solutions
+  - let developers explore their own solutions
 - Keeping projects on the rails
 - The importance of daily PR reviews
 - You may not need Express for that
   - The art of a simple node server
+- Strong coupling through "common"
+- Testing From Jest to Node
