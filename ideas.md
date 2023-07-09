@@ -3,7 +3,7 @@
   - Use a strategy/decider pattern
   - Think outside of if/else/else if
   - Guard pattern
-- Repo bit rot
+- ✅ Repo bit rot
   - Like memory bit rot
   - Append only
   - Small pieces
@@ -19,3 +19,6 @@
   - The art of a simple node server
 - Strong coupling through "common"
 - Testing From Jest to Node
+- Removing babel preset env - Lose 500kb with this one weird trick
+  - babel preset env no longer needed
+- Colima

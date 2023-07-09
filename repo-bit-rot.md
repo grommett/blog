@@ -32,7 +32,7 @@ It's not that the application code has a ton of bugs, quite the opposite. It's v
 
 Institutional knowledge is not good for open/inner source. One approach is to start with a simple set of instructions and let that be your guide.
 
-While I haven't begun to make the changes yet I can see light at the end of the tunnel by simply writing how I'd like the instructions for contributing to be written. From that list of instructions I can see a simpler way forward. And surprisingly it's won't be a huge task to make it a reality.
+While I haven't begun to make the changes yet I can see light at the end of the tunnel by simply writing how I'd like the instructions for contributing to be written. From that list of instructions I can see a simpler way forward. And surprisingly it won't be a huge task to make it a reality.
 
 In summary, occasionally review your contribution processes. Observe and adjust things based on common points of friction. Work back from a simple set of instructions.
 
