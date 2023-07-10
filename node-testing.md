@@ -1,3 +1,9 @@
+---
+date: '2023-07-07'
+published: false
+tags:
+  - 'testing'
+---
 # Unit Testing In Node
 
 With Node 18 we _finally_ have a native [test runner](https://nodejs.dev/en/api/v18/test/) and that means **zero** dependencies. This is great news for organizations and repo owners who have to keep dependencies up-to-date and vulnerabilities at bay.
