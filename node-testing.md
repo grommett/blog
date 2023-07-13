@@ -240,9 +240,3 @@ Reading through the code above we can see that Jest has a nicer interface for Sp
 I haven't written it, but I think we could probably create the same Spy interface using the Node test runner API, but that's another post all together. 
 
 I hope this small preview helps you get your own codebase using Node's test runner. It'll be some work, but the amount of time spent transitioning will be a great investment towards future proofing against vulnerabilities, faster builds, faster test times and tons of transient dependencies.
-
----
-
-#### Notes
-
-1. [Not invented here syndrome](https://en.wikipedia.org/wiki/Not_invented_here)
