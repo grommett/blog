@@ -26,7 +26,7 @@ Following the principles of
 
 ### Make It Work
 
-In the first working version the export job was simple and each export ran in sequence. Given a list of collections, loop through the list and run the `mongoexport` command in each iteration. This was synchronous, simple and it made book keeping and retries easy. The problem, as mentioned above, was that it was prone to run over thirty minutes in production.
+In the first working version the export job was simple and each export ran in sequence. Given a list of collections, loop through the list and run the [`mongoexport`](https://www.mongodb.com/docs/database-tools/mongoexport/) command in each iteration. This was synchronous, simple and it made book keeping and retries easy. The problem, as mentioned above, was that it was prone to run over thirty minutes in production.
 
 ### Make It Right
 
@@ -75,5 +75,6 @@ wait
 echo "All exports done!"
 ```
 
+### Wrapping Up
 
-
+By applying queueing theory principles and parallelizing exports with background processes, we were able to achieve a surprising 65% reduction in export times. That's a huge win in improving efficiency and our consumers were pretty happy about fresh data twice an hour too.
