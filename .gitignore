@@ -2,4 +2,5 @@ ideas.md
 *.note*
 *.rtf
 *.html
+!image-gen/*.html
 .DS_Store

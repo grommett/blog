@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0">
+    <canvas id="myCanvas"></canvas>
+    <img id="output" />
+    <script type="module">
+      // Get the canvas element
+      import { mongoExport } from './mongo-export.js';
+      const canvas = document.getElementById('myCanvas');
+      const winMin = Math.min(window.innerWidth, window.innerHeight);
+      canvas.width = 600;
+      canvas.height = 600;
+
+      const ctx = canvas.getContext('2d');
+      mongoExport(ctx);
+
+      const bgColor = `rgb(249,243,231)`;
+      ctx.globalCompositeOperation = 'multiply';
+      // Load the image
+      const img = new Image();
+      img.src =
+        'concrete-wall-textured-backgrounds-built-structure-concept.jpg';
+
+      // Once the image is loaded, use it as the background texture
+      img.onload = function () {
+        ctx.globalAlpha = 1;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 1;
+        // Save canvas img tag
+        const imageData = canvas.toDataURL();
+        const outputImg = document.getElementById('output');
+        outputImg.src = imageData;
+      };
+    </script>
+  </body>
+</html>
