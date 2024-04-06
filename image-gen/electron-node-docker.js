@@ -8,7 +8,7 @@ export function electronNodeDocker(ctx) {
   const lineTotal = 11;
   const distribution = 590 / lineTotal;
   let currentLine = 0;
-  // ctx.globalCompositeOperation = 'multiply';
+  
   while(currentLine <= lineTotal) {
     const width = randRange(2, 10);
     rectangle(ctx, {
